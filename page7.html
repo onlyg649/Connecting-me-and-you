@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- FILE COMMENTS: page7.html - Timeline page showing major Internet and social media milestones in a vertical timeline layout. -->
+<head>
+    <!-- Page metadata and stylesheet link for page layout and theme -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGE 7: INTERNET &amp; SOCIAL MEDIA Time Line</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Site header includes branding, navigation, and a theme toggle button -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo" aria-label="Go to home page">
+            <div class="logo-mark"></div>
+        </a>
+        <div class="site-branding">
+            <h1>PAGE 7: INTERNET &amp; SOCIAL MEDIA Time Line</h1>
+            <p class="subtitle">A visual history of the Internet and social media milestones.</p>
+        </div>
+        <div class="page-image">
+            
+        </div>
+                <!-- Navigation menu for moving across topic pages -->
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="page1.html">INTRO & CONCEPTS</a>
+            <a href="page2.html">HARDWARE</a>
+            <a href="page3.html">TRANSMISSION</a>
+            <a href="page4.html">TOPOLOGIES</a>
+            <a href="page5.html">DATA & PROTOCOLS</a>
+            <a href="page6.html">SECURITY</a>
+            <a href="page7.html" class="active">TIMELINE</a>
+            <a href="about.html">ABOUT</a>
+        </nav>
+
+                <!-- Button toggles dark mode and stores preference in localStorage -->
+        <button id="dark-mode-toggle">Dark Mode</button>
+    </header>
+
+        <!-- JavaScript handles dark mode, sticky navigation, and page load behavior -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const header = document.querySelector('.site-header');
+            const body = document.body;
+            const headerHeight = header.offsetHeight;
+            
+            if (window.pageYOffset > headerHeight - 80) {
+                nav.classList.add('sticky-nav');
+                body.classList.add('nav-sticky');
+            } else {
+                nav.classList.remove('sticky-nav');
+                body.classList.remove('nav-sticky');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('dark-mode-toggle').textContent = 'Light Mode';
+            }
+        });
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const button = document.getElementById('dark-mode-toggle');
+            const isDark = document.body.classList.contains('dark-mode');
+            button.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+            localStorage.setItem('darkMode', isDark);
+        });
+    </script>
+        <!-- Icon or illustration representing the current page theme -->
+    <div class="page-icon">
+    </div>
+        <!-- Timeline layout for chronological events and milestones -->
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <img class="timeline-image" src="https://ih1.redbubble.net/image.4419624906.6242/raf,360x360,075,t,fafafa:ca443f4786.u1.jpg" alt="ARPANET network diagram">
+                <h2>1969</h2>
+                <p>The first version of the Internet, ARPANET, is developed in the United States, allowing computers to communicate over long distances.</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <img class="timeline-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtNo3pnBI0fH9C8WIRbkCTZLyCBNO6uAol9g&s" alt="TCP/IP protocol illustration">
+                <h2>1983</h2>
+                <p>The Internet adopts TCP/IP, enabling different networks to connect into one global system.</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <img class="timeline-image" src="https://cdn-icons-png.flaticon.com/512/6471/6471842.png" alt="World Wide Web icon">
+                <h2>1991</h2>
+                <p>The World Wide Web is created by Tim Berners-Lee, making the Internet accessible to the public.</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <img class="timeline-image" src="https://media.licdn.com/dms/image/v2/C560BAQGVM4fKeY_giQ/company-logo_200_200/company-logo_200_200/0/1630649303298/six_degrees_group_logo?e=2147483647&v=beta&t=l886GUF0ufxQ6TsGRlL0GkSJAHkPglLacjPwg__6FdM" alt="Early social media connection icon">
+                <h2>1997</h2>
+                <p>SixDegrees launches, widely considered the first recognizable social media platform.</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <img class="timeline-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/960px-LinkedIn_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Social network profile illustration">
+                <h2>2003</h2>
+                <p>Platforms like MySpace and LinkedIn are created, expanding online social interaction.</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <img class="timeline-image" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="University networking platform icon">
+                <h2>2004</h2>
+                <p>Facebook is launched by Mark Zuckerberg as a university networking site.</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <img class="timeline-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1280px-YouTube_full-color_icon_%282017%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Video sharing icon">
+                <h2>2005</h2>
+                <p>YouTube is created, allowing users to upload and share videos globally.</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <img class="timeline-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/960px-Logo_of_Twitter.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Tweeting bird icon">
+                <h2>2006</h2>
+                <p>Twitter launches, introducing short-form messaging (tweets).</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <img class="timeline-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1280px-Instagram_icon.png" alt="Photo sharing app icon">
+                <h2>2010</h2>
+                <p>Instagram launches, focusing on photo and video sharing.</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <img class="timeline-image" src="https://cdn.prod.website-files.com/666d73652dd00cac579627ec/67767f942c4928d932dc4f37_67767e2671f2ed8d606a3302_Icon.jpeg" alt="Disappearing message ghost icon">
+                <h2>2011</h2>
+                <p>Snapchat is released, introducing disappearing messages.</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <img class="timeline-image" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/TikTok_logo.svg/3840px-TikTok_logo.svg.png" alt="Short video and music app icon">
+                <h2>2016–17</h2>
+                <p>TikTok (originally Douyin in China) launches internationally in 2017, becoming highly popular among young users.</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <img class="timeline-image" src="https://cdn-icons-png.flaticon.com/512/17002/17002143.png" alt="Online safety shield icon">
+                <h2>2021</h2>
+                <p>The Australian government introduces the <strong>Online Safety Act 2021</strong>, strengthening regulations on harmful online content.</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <img class="timeline-image" src="data:image/png;base64,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" alt="Regulation and policy review icon">
+                <h2>2023–2024</h2>
+                <p>Australia increases discussions and proposals to restrict or regulate social media use for children under certain ages due to safety concerns.</p>
+            </div>
+        </div>
+    </div>
+      
+            <!-- Footer section contains site credits, copyright, and additional links -->
+        <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Computer Networks & Social Media</h3>
+                <p>This site combines clear explanations of computer networking, communication protocols, security, and the social media timeline into one student-friendly learning resource.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="page1.html">Intro & Concepts</a>
+                    <a href="page2.html">Hardware</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <a href="page3.html">Transmission</a>
+                    <a href="page4.html">Topologies</a>
+                    <a href="page6.html">Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Timeline</h4>
+                    <a href="page5.html">Data & Protocols</a>
+                    <a href="page7.html">Social Media Timeline</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-note">&copy; 2026 Computer Networks & Social Media Educational Resource. All rights reserved.</p>
+            <p class="footer-note">Designed for easy classroom review and student learning.</p>
+        </div>
+    </footer>
+</body>
+</html>

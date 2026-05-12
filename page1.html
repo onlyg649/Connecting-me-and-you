@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- FILE COMMENTS: page1.html - Content page covering a specific networking topic with glossary and navigation links. -->
+<head>
+    <!-- Page metadata and stylesheet link for page layout and theme -->
+    <title>INTRO TO COMPUTER &amp; SOCIAL NETWORKS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Site header includes branding, navigation, and a theme toggle button -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo" aria-label="Go to home page">
+            <div class="logo-mark"></div>
+        </a>
+        <div class="site-branding">
+            <h1>PAGE 1 - INTRODUCTION to Networking and Social Networks</h1>
+            <p class="subtitle">Learn the basic concepts behind computer networks, social networks, and how they connect people and devices.</p>
+        </div>
+        <div class="page-image">
+            
+        </div>
+
+                <!-- Navigation menu for moving across topic pages -->
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="page1.html" class="active">INTRO & CONCEPTS</a>
+            <a href="page2.html">HARDWARE</a>
+            <a href="page3.html">TRANSMISSION</a>
+            <a href="page4.html">TOPOLOGIES</a>
+            <a href="page5.html">DATA & PROTOCOLS</a>
+            <a href="page6.html">SECURITY</a>
+            <a href="page7.html">TIMELINE</a>
+            <a href="about.html">ABOUT</a>
+        </nav>
+
+                <!-- Button toggles dark mode and stores preference in localStorage -->
+        <button id="dark-mode-toggle">Dark Mode</button>
+        
+    </header>
+
+        <!-- JavaScript handles dark mode, sticky navigation, and page load behavior -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('dark-mode-toggle').textContent = 'Light Mode';
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const header = document.querySelector('.site-header');
+            const body = document.body;
+            const headerHeight = header.offsetHeight;
+            
+            if (window.pageYOffset > headerHeight - 80) {
+                nav.classList.add('sticky-nav');
+                body.classList.add('nav-sticky');
+            } else {
+                nav.classList.remove('sticky-nav');
+                body.classList.remove('nav-sticky');
+            }
+        });
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const button = document.getElementById('dark-mode-toggle');
+            const isDark = document.body.classList.contains('dark-mode');
+            button.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+            localStorage.setItem('darkMode', isDark);
+        });
+    </script>
+
+        <!-- Icon or illustration representing the current page theme -->
+    <div class="page-icon">
+        <img src="img2.png" alt="Network icon">
+    </div>
+
+        <!-- Intro cards summarize key concepts for the topic -->
+    <div class="intro-cards">
+        <div class="intro-card">
+            <h3>What is a Computer Network?</h3>
+            <p>A computer network is a collection of interconnected devices that can communicate and share resources with each other.</p>
+        </div>
+        
+        <div class="intro-card">
+            <h3>What is a Social Network?</h3>
+            <p>A social network is a structure that describes the relationships between individuals or organizations, often facilitated by online platforms for communication and interaction.</p>
+        </div>
+        
+        <div class="intro-card">
+            <h3>ARPANET</h3>
+            <p><span class="highlight">(Advanced Research Projects Agency Network)</span> was the basis of the Internet. It was established in 1969 by the US Department of Defence.</p>
+        </div>
+    </div>
+    
+    <h2>Glossary</h2>
+        <!-- Glossary grid presents term definitions and helpful explanations -->
+    <div class="glossary-grid">
+        <dl class="glossary-item">
+            <dt>An entity in a social network (sn) with example</dt>
+            <dd>People, groups, or organisations with profiles in a social network. They post content, interact, form relationships, and participate in events. For example, a person with a Facebook profile who posts updates and connects with friends.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Bandwidth</dt>
+            <dd>Network bandwidth is a measurement indicating the maximum capacity of a wired or wireless communications link to transmit data over a network connection in a given amount of time.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>A relationship in a sn with example</dt>
+            <dd>Connections between entities based on interactions, shared interests, communication, or exchanges. Represented as edges in a network graph. For example, two friends who follow each other on Instagram and comment on each other's posts.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Binary/Decimal</dt>
+            <dd>Binary: A string of 0s and 1s, which is the input from the computer, translated by the computer into its own understanding. Decimal: A base‑10 number system using digits 0–9, the standard system humans use for counting.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>An event in a social network with example</dt>
+            <dd>An event in a social network could be a gathering or online activity where entities participate. For example, a virtual meetup on Zoom where participants share ideas and collaborate.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Bits, Bytes, Kilobytes, Megabytes</dt>
+            <dd>Bits, Bytes, KiloBytes, Megabytes all are a specific amount of storage used by an application, or a document. Megabyte is 1024 KB, and KB is 1024 Bytes.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Sociogram</dt>
+            <dd>A visual map of relationships within a group, showing who interacts with whom and highlighting popularity, isolation, or subgroups.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Data vs Information</dt>
+            <dd>Data: Information sent across a network, broken into packets containing bits, destination addresses, error checking, and sometimes encryption for secure transmission. Information: Processed, organized, and structured data that provides context and meaning for decision-making.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Six Degrees of Separation</dt>
+            <dd>The theory that everyone is connected to everyone else through a chain of no more than six acquaintances.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Internet of Me/ Internet of Things</dt>
+            <dd>Internet of Me (IoMe): The Internet of Me (IoMe) loosely refers to technology which connects our minds and bodies with the online world. It transforms our biological and cognitive life into streams of data which can be monitored, shared and shaped. Internet of Things (IoT): Internet of Things (IoT) encompasses smart devices and smart objects that send and receive information using the internet and communication infrastructure.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Digital footprint</dt>
+            <dd>The trail of data you leave online, including posts, searches, uploads, and interactions that can be traced back to you.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Cloud Computing</dt>
+            <dd>A mode of computer data storage in which digital data is stored on servers in off-site locations. The servers are maintained by a third-party provider who is responsible for hosting, managing and securing data stored on its infrastructure.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Digital citizenship</dt>
+            <dd>Using technology safely, responsibly and respectfully, understanding online rights, responsibilities, and appropriate behaviour.</dd>
+        </dl>
+    </div>
+            <!-- Footer section contains site credits, copyright, and additional links -->
+        <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Computer Networks & Social Media</h3>
+                <p>This site combines clear explanations of computer networking, communication protocols, security, and the social media timeline into one student-friendly learning resource.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="page1.html">Intro & Concepts</a>
+                    <a href="page2.html">Hardware</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <a href="page3.html">Transmission</a>
+                    <a href="page4.html">Topologies</a>
+                    <a href="page6.html">Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Timeline</h4>
+                    <a href="page5.html">Data & Protocols</a>
+                    <a href="page7.html">Social Media Timeline</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-note">&copy; 2026 Computer Networks & Social Media Educational Resource. All rights reserved.</p>
+            <p class="footer-note">Designed for easy classroom review and student learning.</p>
+        </div>
+    </footer>
+</body>
+</html>

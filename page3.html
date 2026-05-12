@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- FILE COMMENTS: page3.html - Content page covering a specific networking topic with glossary and navigation links. -->
+<head>
+    <!-- Page metadata and stylesheet link for page layout and theme -->
+    <title>TRANSMISSION MEDIA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Site header includes branding, navigation, and a theme toggle button -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo" aria-label="Go to home page">
+            <div class="logo-mark"></div>
+        </a>
+        <div class="site-branding">
+            <h1>PAGE 3: TRANSMISSION MEDIA</h1>
+            <p class="subtitle">Explore the different physical and wireless pathways that carry data across networks.</p>
+        </div>
+        <div class="page-image">
+            
+        </div>
+                <!-- Navigation menu for moving across topic pages -->
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="page1.html">INTRO & CONCEPTS</a>
+            <a href="page2.html">HARDWARE</a>
+            <a href="page3.html" class="active">TRANSMISSION</a>
+            <a href="page4.html">TOPOLOGIES</a>
+            <a href="page5.html">DATA & PROTOCOLS</a>
+            <a href="page6.html">SECURITY</a>
+            <a href="page7.html">TIMELINE</a>
+            <a href="about.html">ABOUT</a>
+        </nav>
+
+                <!-- Button toggles dark mode and stores preference in localStorage -->
+        <button id="dark-mode-toggle">Dark Mode</button>
+    </header>
+
+        <!-- JavaScript handles dark mode, sticky navigation, and page load behavior -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('dark-mode-toggle').textContent = 'Light Mode';
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const header = document.querySelector('.site-header');
+            const body = document.body;
+            const headerHeight = header.offsetHeight;
+            
+            if (window.pageYOffset > headerHeight - 80) {
+                nav.classList.add('sticky-nav');
+                body.classList.add('nav-sticky');
+            } else {
+                nav.classList.remove('sticky-nav');
+                body.classList.remove('nav-sticky');
+            }
+        });
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const button = document.getElementById('dark-mode-toggle');
+            const isDark = document.body.classList.contains('dark-mode');
+            button.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+            localStorage.setItem('darkMode', isDark);
+        });
+    </script>
+        <!-- Icon or illustration representing the current page theme -->
+    <div class="page-icon">
+        <img src="transmission.avif" alt="Transmission icon">
+    </div>
+    <p>What are transmission media? Transmission media are the physical or wireless pathways that carry data signals between devices in a network.</p>
+    <h2>Wired Transmission</h2>
+    <p>Sending data through physical cables such as copper or fibre, offering high speed and low interference.</p>
+        <!-- Glossary grid presents term definitions and helpful explanations -->
+    <div class="glossary-grid">
+        <dl class="glossary-item">
+            <dt>Unshielded Twisted Pair (UTP) Cable</dt>
+            <dd>Unshielded Twisted Pair cable used in Ethernet networks; cheap, flexible, and suitable for most LAN connections.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Copper Wire</dt>
+            <dd>Traditional electrical conductor used for data transmission; inexpensive but suffers from interference and signal loss over distance.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Coaxial Cable</dt>
+            <dd>Cable with a central conductor and shielding, offering better noise protection than UTP and used for broadband connections.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Optical Fibre</dt>
+            <dd>Uses pulses of light through glass fibres to transmit data at extremely high speeds over long distances with minimal loss.</dd>
+        </dl>
+    </div>
+    
+    <h2>Wireless Transmission</h2>
+    <p>Transmitted through the air using electromagnetic energy. Most use radio-wave frequencies within the electromagnetic spectrum. Different frequencies are used for different purposes depending on the required distance, speed and reliability of the transmission.</p>
+    <div class="glossary-grid">
+        <dl class="glossary-item">
+            <dt>Wi-Fi</dt>
+            <dd>Wi-Fi is what allows you to get access to high speed internet access on many devices without the need for a wired network. Wi-Fi technology uses radio waves to transmit data, operating mainly on the 2.4GHz and 5GHz frequency band.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Cellular Network</dt>
+            <dd>Mobile phone networks that use radio waves to send data. The signal needs to be received from a mobile phone tower which is then connected to the vast cellular network composed of wired and wireless connections.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Satellite</dt>
+            <dd>Satellite communication relies on a network of satellites in orbit around the earth, which receives and transmits data signals on radio waves. The satellite dish is equipped with a transmitter and receiver which communicates with the satellites in orbit. This however adds a noticeable delay in signal transmission due to the distance.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Bluetooth</dt>
+            <dd>Bluetooth is the exchange between devices such as phones and headphones. It is power efficient which reduces the battery requirements for wireless connection between devices around 10 metres apart.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Zigbee, Z-Wave and Matter</dt>
+            <dd>Low-power wireless communication protocols used for IoT devices, enabling smart home automation with short-range connectivity.</dd>
+        </dl>
+    </div>
+            <!-- Footer section contains site credits, copyright, and additional links -->
+        <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Computer Networks & Social Media</h3>
+                <p>This site combines clear explanations of computer networking, communication protocols, security, and the social media timeline into one student-friendly learning resource.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="page1.html">Intro & Concepts</a>
+                    <a href="page2.html">Hardware</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <a href="page3.html">Transmission</a>
+                    <a href="page4.html">Topologies</a>
+                    <a href="page6.html">Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Timeline</h4>
+                    <a href="page5.html">Data & Protocols</a>
+                    <a href="page7.html">Social Media Timeline</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-note">&copy; 2026 Computer Networks & Social Media Educational Resource. All rights reserved.</p>
+            <p class="footer-note">Designed for easy classroom review and student learning.</p>
+        </div>
+    </footer>
+</body>
+</html>

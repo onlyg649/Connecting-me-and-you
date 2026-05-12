@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- FILE COMMENTS: page2.html - Content page covering a specific networking topic with glossary and navigation links. -->
+<head>
+    <!-- Page metadata and stylesheet link for page layout and theme -->
+    <title>NETWORK HARDWARE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Site header includes branding, navigation, and a theme toggle button -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo" aria-label="Go to home page">
+            <div class="logo-mark"></div>
+        </a>
+        <div class="site-branding">
+            <h1>PAGE 2: NETWORK HARDWARE</h1>
+            <p class="subtitle">Discover the physical devices and equipment that make computer networks function.</p>
+        </div>
+        <div class="page-image">
+            
+        </div>
+                <!-- Navigation menu for moving across topic pages -->
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="page1.html">INTRO & CONCEPTS</a>
+            <a href="page2.html" class="active">HARDWARE</a>
+            <a href="page3.html">TRANSMISSION</a>
+            <a href="page4.html">TOPOLOGIES</a>
+            <a href="page5.html">DATA & PROTOCOLS</a>
+            <a href="page6.html">SECURITY</a>
+            <a href="page7.html">TIMELINE</a>
+            <a href="about.html">ABOUT</a>
+        </nav>
+
+                <!-- Button toggles dark mode and stores preference in localStorage -->
+        <button id="dark-mode-toggle">Dark Mode</button>
+    </header>
+
+        <!-- JavaScript handles dark mode, sticky navigation, and page load behavior -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('dark-mode-toggle').textContent = 'Light Mode';
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const header = document.querySelector('.site-header');
+            const body = document.body;
+            const headerHeight = header.offsetHeight;
+            
+            if (window.pageYOffset > headerHeight - 80) {
+                nav.classList.add('sticky-nav');
+                body.classList.add('nav-sticky');
+            } else {
+                nav.classList.remove('sticky-nav');
+                body.classList.remove('nav-sticky');
+            }
+        });
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const button = document.getElementById('dark-mode-toggle');
+            const isDark = document.body.classList.contains('dark-mode');
+            button.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+            localStorage.setItem('darkMode', isDark);
+        });
+    </script>
+
+        <!-- Icon or illustration representing the current page theme -->
+    <div class="page-icon">
+        <img src="hardware.png" alt="Hardware icon">
+    </div>
+    <p>What is Hardware? Hardware refers to the physical components of a computer network, such as devices and equipment used to build and operate the network.</p>
+    <h2>Glossary</h2>
+        <!-- Glossary grid presents term definitions and helpful explanations -->
+    <div class="glossary-grid">
+        <dl class="glossary-item">
+            <dt>Node</dt>
+            <dd>Devices that create, send, receive, or forward data on a network, including computers, phones, sensors, routers, printers, and microcontrollers.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Switches</dt>
+            <dd>Smarter devices that send data only to the intended device using MAC addresses, reducing collisions and improving network performance.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Hub /Smart Hub</dt>
+            <dd>Basic devices that broadcast data to all connected computers, causing many collisions. Rarely used today due to inefficiency. / Central controllers for smart home devices, using Wi‑Fi, Bluetooth, Zigbee, or Z‑Wave to coordinate automation and communication.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Router</dt>
+            <dd>Devices that direct data between networks, choosing the best path for packets. Connect homes to ISPs and form the backbone of the internet.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Wireless Access Points (WAPs)</dt>
+            <dd>Allow wireless devices to join a wired network, enabling laptops, phones, and tablets to access LANs and the internet.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Servers and types of servers</dt>
+            <dd>Powerful computers provide services like file storage, printing, websites, email, and databases to clients on a network. Types include web servers, file servers, mail servers, etc.</dd>
+        </dl>
+    </div>
+            <!-- Footer section contains site credits, copyright, and additional links -->
+        <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Computer Networks & Social Media</h3>
+                <p>This site combines clear explanations of computer networking, communication protocols, security, and the social media timeline into one student-friendly learning resource.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="page1.html">Intro & Concepts</a>
+                    <a href="page2.html">Hardware</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <a href="page3.html">Transmission</a>
+                    <a href="page4.html">Topologies</a>
+                    <a href="page6.html">Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Timeline</h4>
+                    <a href="page5.html">Data & Protocols</a>
+                    <a href="page7.html">Social Media Timeline</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-note">&copy; 2026 Computer Networks & Social Media Educational Resource. All rights reserved.</p>
+            <p class="footer-note">Designed for easy classroom review and student learning.</p>
+        </div>
+    </footer>
+</body>
+</html>

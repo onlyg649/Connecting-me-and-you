@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- FILE COMMENTS: page5.html - Content page covering a specific networking topic with glossary and navigation links. -->
+<head>
+    <!-- Page metadata and stylesheet link for page layout and theme -->
+    <title>DATA PROCESSING AND TRANSMISSION</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Site header includes branding, navigation, and a theme toggle button -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo" aria-label="Go to home page">
+            <div class="logo-mark"></div>
+        </a>
+        <div class="site-branding">
+            <h1>PAGE 5: DATA PROCESSING AND TRANSMISSION</h1>
+            <p class="subtitle">Learn how protocols and rules keep data moving correctly and securely across networks.</p>
+        </div>
+        <div class="page-image">
+            
+        </div>
+
+                <!-- Navigation menu for moving across topic pages -->
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="page1.html">INTRO & CONCEPTS</a>
+            <a href="page2.html">HARDWARE</a>
+            <a href="page3.html">TRANSMISSION</a>
+            <a href="page4.html">TOPOLOGIES</a>
+            <a href="page5.html" class="active">DATA & PROTOCOLS</a>
+            <a href="page6.html">SECURITY</a>
+            <a href="page7.html">TIMELINE</a>
+            <a href="about.html">ABOUT</a>
+        </nav>
+
+                <!-- Button toggles dark mode and stores preference in localStorage -->
+        <button id="dark-mode-toggle">Dark Mode</button>
+    </header>
+
+        <!-- JavaScript handles dark mode, sticky navigation, and page load behavior -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const header = document.querySelector('.site-header');
+            const body = document.body;
+            const headerHeight = header.offsetHeight;
+            
+            if (window.pageYOffset > headerHeight - 80) {
+                nav.classList.add('sticky-nav');
+                body.classList.add('nav-sticky');
+            } else {
+                nav.classList.remove('sticky-nav');
+                body.classList.remove('nav-sticky');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('dark-mode-toggle').textContent = 'Light Mode';
+            }
+        });
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const button = document.getElementById('dark-mode-toggle');
+            const isDark = document.body.classList.contains('dark-mode');
+            button.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+            localStorage.setItem('darkMode', isDark);
+        });
+    </script>
+
+        <!-- Icon or illustration representing the current page theme -->
+    <div class="page-icon">
+        <img src="https://images.unsplash.com/photo-1650327034350-08e408a8f902?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Data flow icon">
+    </div>
+    <p>What are protocols? A communication protocol is a system of rules that allows 2 or more entities of a communications system to transmit information via any kind of variation of a physical quantity. The protocol defines the rules, syntax, semantics and synchronisation of communication and possible error recovery methods. Protocols may be implemented by hardware, software, or a combination of both.</p>
+    <h2>Glossary</h2>
+        <!-- Glossary grid presents term definitions and helpful explanations -->
+    <div class="glossary-grid">
+        <dl class="glossary-item">
+            <dt>TCP/IP</dt>
+            <dd>TCP/IP (Transmission Control Protocol/Internet Protocol) is the fundamental suite of communication rules enabling internet connectivity and data exchange. It breaks data into packets and manages routing, transmission, and ordering.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>FTP</dt>
+            <dd>File Transfer Protocol (FTP) is a standard network protocol used for the transfer of computer files between a client and server on a computer network.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>What is handshaking?</dt>
+            <dd>The process where two devices agree on communication rules before data transfer begins.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>HTML</dt>
+            <dd>Hypertext markup language (HTML) is used to create web pages. HTML is a set of special instructions (called tags) that indicate how parts of a document will be displayed.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>HTTP</dt>
+            <dd>HTTP (HyperText Transfer Protocol) was developed by Tim Berners-Lee for embedding links in text. In 1991 the World Wide Web (or Web) was introduced using this HTTP protocol.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>DNS – What is the role of DNS?</dt>
+            <dd>The domain naming system (DNS) was first implemented in 1984. It translates domain names into IP addresses, allowing users to access websites using easy-to-remember names instead of numerical addresses.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>IP Address vs Mac Address</dt>
+            <dd>IP Address: IP address (Internet Protocol address). Most IP addresses use four bytes (32 bits) grouped in four 8-bit segments, separated by a full stop (period). MAC Address: A Media Access Control (MAC) address is a unique, permanent 12-digit hexadecimal identifier assigned to a device's network interface controller by the manufacturer.</dd>
+        </dl>
+    </div>
+
+        <!-- Footer section contains site credits, copyright, and additional links -->
+        <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Computer Networks & Social Media</h3>
+                <p>This site combines clear explanations of computer networking, communication protocols, security, and the social media timeline into one student-friendly learning resource.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="page1.html">Intro & Concepts</a>
+                    <a href="page2.html">Hardware</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <a href="page3.html">Transmission</a>
+                    <a href="page4.html">Topologies</a>
+                    <a href="page6.html">Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Timeline</h4>
+                    <a href="page5.html">Data & Protocols</a>
+                    <a href="page7.html">Social Media Timeline</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-note">&copy; 2026 Computer Networks & Social Media Educational Resource. Created by Arshith Varanasi and Rishi Khakurel. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

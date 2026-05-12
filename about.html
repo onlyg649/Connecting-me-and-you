@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- FILE COMMENTS: about.html - About page describing the website, learning modules, and project creators -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Computer Networks & Social Media Timeline</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="site-logo" aria-label="Go to home page">
+            <div class="logo-mark"></div>
+        </a>
+        <div class="site-branding">
+            <h1>About This Educational Resource</h1>
+            <p class="subtitle">Learn who created the site, what the modules cover, and how the pages help explain computer networks and social media history.</p>
+        </div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="page1.html">INTRO & CONCEPTS</a>
+            <a href="page2.html">HARDWARE</a>
+            <a href="page3.html">TRANSMISSION</a>
+            <a href="page4.html">TOPOLOGIES</a>
+            <a href="page5.html">DATA & PROTOCOLS</a>
+            <a href="page6.html">SECURITY</a>
+            <a href="page7.html">TIMELINE</a>
+            <a href="about.html" class="active">ABOUT</a>
+        </nav>
+        <button id="dark-mode-toggle">Dark Mode</button>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('dark-mode-toggle').textContent = 'Light Mode';
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const header = document.querySelector('.site-header');
+            const body = document.body;
+            const headerHeight = header.offsetHeight;
+            if (window.pageYOffset > headerHeight - 80) {
+                nav.classList.add('sticky-nav');
+                body.classList.add('nav-sticky');
+            } else {
+                nav.classList.remove('sticky-nav');
+                body.classList.remove('nav-sticky');
+            }
+        });
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const button = document.getElementById('dark-mode-toggle');
+            const isDark = document.body.classList.contains('dark-mode');
+            button.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+            localStorage.setItem('darkMode', isDark);
+        });
+    </script>
+
+    <section class="intro-section">
+        <h2>About the Website</h2>
+        <p>This website is an educational hub for understanding computer networks, data transmission, and the evolution of digital communication platforms. It combines clear explanations of networking fundamentals with practical examples of hardware, protocols, security, and a timeline of how social media emerged.</p>
+    </section>
+
+    <section class="about-section">
+        <h2>What You Can Explore</h2>
+        <p>The site is structured into dedicated pages so readers can explore each topic step-by-step. The Introduction & Concepts page covers the core ideas behind computer networks and social networks, including how communication systems connect devices and people. The Hardware page presents physical networking equipment such as routers, switches, cables, and servers. The Transmission page explains how data moves over wired and wireless media, including copper, fiber, and radio links. The Topologies page explores common network layouts and how devices are arranged to share information efficiently. The Data & Protocols page describes how data is processed, formatted, and controlled using communication rules and standards. The Security page covers essential protections, threats, and practices for keeping networks and data safe. The Timeline page shows a historical view of the Internet and social media milestones, explaining how modern digital communication evolved.</p>
+        <p>This page also includes the same overview information found in the homepage about section, making it easy to learn who created the project and why.</p>
+    </section>
+
+    <section class="about-section">
+        <h2>Creators</h2>
+        <p>This educational resource was completed by three collaborators.</p>
+        <p> Rishi Khakurel developed the HTML and CSS for the interactive timeline section of the website and implemented a functional dark/light mode toggle feature to improve user accessibility and user experience. He also completed the glossary content and formatting for pages 3, 6, and 7, ensuring consistency across the site, and refined the overall CSS styling with improved colours, spacing, responsiveness, and visual presentation.</p>
+        <p>Arshith Varanasi took the lead role in designing and structuring the overall website layout using HTML, creating the main framework and navigation for the project. He contributed the majority of the CSS styling across the website (excluding page 7), helped establish visual design, formatting, and responsiveness, added and organised glossary content into the final pages, and inserted and positioned all website images to match the design theme and improve readability.</p>
+        <p>Joshua Ho researched and sourced all images used throughout the website, ensuring they were relevant, high quality, and suitable for the project theme. He contributed creative ideas and suggestions during planning and development, and assisted the team by giving feedback on layout and presentation choices to support the final outcome.</p>
+        <p>Our goal is to make learning about computer networks and social media history accessible, visual, and easy to follow.</p>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Computer Networks & Social Media</h3>
+                <p>This site combines clear explanations of computer networking, communication protocols, security, and the social media timeline into one student-friendly learning resource.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="page1.html">Intro & Concepts</a>
+                    <a href="page2.html">Hardware</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <a href="page3.html">Transmission</a>
+                    <a href="page4.html">Topologies</a>
+                    <a href="page6.html">Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Timeline</h4>
+                    <a href="page5.html">Data & Protocols</a>
+                    <a href="page7.html">Social Media Timeline</a>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-note">&copy; 2026 Computer Networks & Social Media Educational Resource. All rights reserved.</p>
+            <p class="footer-note">Designed for easy classroom review and student learning.</p>
+        </div>
+    </footer>
+</body>
+</html>

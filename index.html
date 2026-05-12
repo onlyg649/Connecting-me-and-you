@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- FILE COMMENTS: index.html - Home page introducing the site, navigation menu, dark mode toggle, module cards, and about section. -->
+<head>
+    <!-- Page metadata and stylesheet link for page layout and theme -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Networks & Social Media Timeline - Educational Resource</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Site header includes branding, navigation, and a theme toggle button -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo" aria-label="Go to home page">
+            <div class="logo-mark"></div>
+        </a>
+        <div class="site-branding">
+            <h1>Computer Networks & Social Media Development</h1>
+            <p class="subtitle">Explore the evolution of networks, connectivity, and digital communication platforms that connect our world.</p>
+        </div>
+
+                <!-- Navigation menu for moving across topic pages -->
+        <nav>
+            <a href="index.html" class="active">HOME</a>
+            <a href="page1.html">INTRO & CONCEPTS</a>
+            <a href="page2.html">HARDWARE</a>
+            <a href="page3.html">TRANSMISSION</a>
+            <a href="page4.html">TOPOLOGIES</a>
+            <a href="page5.html">DATA & PROTOCOLS</a>
+            <a href="page6.html">SECURITY</a>
+            <a href="page7.html">TIMELINE</a>
+            <a href="about.html">ABOUT</a>
+        </nav>
+
+                <!-- Button toggles dark mode and stores preference in localStorage -->
+        <button id="dark-mode-toggle">Dark Mode</button>
+    </header>
+
+        <!-- JavaScript handles dark mode, sticky navigation, and page load behavior -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('dark-mode-toggle').textContent = 'Light Mode';
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const header = document.querySelector('.site-header');
+            const body = document.body;
+            const headerHeight = header.offsetHeight;
+            
+            if (window.pageYOffset > headerHeight - 80) {
+                nav.classList.add('sticky-nav');
+                body.classList.add('nav-sticky');
+            } else {
+                nav.classList.remove('sticky-nav');
+                body.classList.remove('nav-sticky');
+            }
+        });
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const button = document.getElementById('dark-mode-toggle');
+            const isDark = document.body.classList.contains('dark-mode');
+            button.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+            localStorage.setItem('darkMode', isDark);
+        });
+    </script>
+
+        <!-- Icon or illustration representing the current page theme -->
+    <div class="page-icon">
+        <img src="img1.webp" alt="Network icon">
+    </div>
+
+        <!-- Intro section explains the purpose of this educational resource -->
+    <section class="intro-section">
+        <h2>Welcome to the Educational Hub</h2>
+        <p>This comprehensive resource covers the fundamental concepts of computer networks, the hardware that powers them, transmission technologies, network topologies, data processing protocols, security measures, and the fascinating history of the Internet and social media development.</p>
+        <p>Whether you're a student, educator, or technology enthusiast, explore each topic through detailed explanations, glossaries, and visual diagrams.</p>
+    </section>
+
+    <section id="pages" class="pages-grid">
+        <h2>Learning Modules</h2>
+        
+        <div class="page-card">
+            <div class="card-icon">
+                <img src="img4.svg" alt="Intro icon">
+            </div>
+            <h3>Introduction to Networks</h3>
+            <p>Learn the basic concepts behind computer networks, social networks, and how they connect people and devices. Discover ARPANET and foundational networking principles.</p>
+            <a href="page1.html" class="card-link">Explore →</a>
+        </div>
+
+        <div class="page-card">
+            <div class="card-icon">
+                <img src="https://images.unsplash.com/vector-1768405714040-582cff068970?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hardware icon">
+            </div>
+            <h3>Network Hardware</h3>
+            <p>Discover the physical devices and equipment that make computer networks function. From routers to servers, understand the building blocks of connectivity.</p>
+            <a href="page2.html" class="card-link">Explore →</a>
+        </div>
+
+        <div class="page-card">
+            <div class="card-icon">
+                <img src="https://images.unsplash.com/vector-1762514272686-6409a6d37521?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fHRyYW5zbWlzc2lvbnxlbnwwfHwwfHx8MA%3D%3D" alt="Transmission icon">
+            </div>
+            <h3>Transmission Media</h3>
+            <p>Learn how data travels over copper, fiber, and wireless networks. Explore wired and wireless transmission technologies and their applications.</p>
+            <a href="page3.html" class="card-link">Explore →</a>
+        </div>
+
+        <div class="page-card">
+            <div class="card-icon">
+                <img src="https://images.unsplash.com/vector-1774963118379-eccd7ddd542d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fG5ldHdvcmslMjBoYXJkd2FyZXxlbnwwfHwwfHx8MA%3D%3D" alt="Topology icon">
+            </div>
+            <h3>Network Topologies</h3>
+            <p>Explore how network devices are arranged and how data moves between them. Understand different network layout patterns and their advantages.</p>
+            <a href="page4.html" class="card-link">Explore →</a>
+        </div>
+
+        <div class="page-card">
+            <div class="card-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/8439/8439120.png" alt="Data flow icon">
+            </div>
+            <h3>Data Processing & Protocols</h3>
+            <p>Understand how data is handled, processed, and forwarded across a network. Learn about communication protocols and data transmission rules.</p>
+            <a href="page5.html" class="card-link">Explore →</a>
+        </div>
+
+        <div class="page-card">
+            <div class="card-icon">
+                <img src="https://images.unsplash.com/vector-1775556823900-485aad78c43a?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Security icon">
+            </div>
+            <h3>Network Security</h3>
+            <p>Learn about threats, protection mechanisms, and how to keep data safe on networks. Understand security challenges in our connected world.</p>
+            <a href="page6.html" class="card-link">Explore →</a>
+        </div>
+
+        <div class="page-card">
+            <div class="card-icon">
+                <img src="https://images.unsplash.com/vector-1775556827361-23c926ce6c55?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Timeline icon">
+            </div>
+            <h3>Internet & Social Media Timeline</h3>
+            <p>A visual history of the Internet and social media milestones from 1969 to present day. See how technology evolved to shape our modern world.</p>
+            <a href="page7.html" class="card-link">Explore →</a>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <h2>About This Resource</h2>
+        <p>This educational website serves as a comprehensive guide to understanding computer networks, from fundamental concepts to advanced topics in data transmission, security, and the evolution of digital communication platforms. Each module provides detailed information, visual aids, and glossaries to support learning.</p>
+        <p style="text-align: center; margin-top: 40px; font-style: italic; color: #888;">Created by Arshith Varanasi and Rishi Khakurel</p>
+    </section>
+
+            <!-- Footer section contains site credits, copyright, and additional links -->
+        <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Computer Networks & Social Media</h3>
+                <p>This site combines clear explanations of computer networking, communication protocols, security, and the social media timeline into one student-friendly learning resource.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="page1.html">Intro & Concepts</a>
+                    <a href="page2.html">Hardware</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <a href="page3.html">Transmission</a>
+                    <a href="page4.html">Topologies</a>
+                    <a href="page6.html">Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Timeline</h4>
+                    <a href="page5.html">Data & Protocols</a>
+                    <a href="page7.html">Social Media Timeline</a>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-note">&copy; 2026 Computer Networks & Social Media Educational Resource. All rights reserved.</p>
+            <p class="footer-note">Designed for easy classroom review and student learning.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

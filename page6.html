@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- FILE COMMENTS: page6.html - Content page covering a specific networking topic with glossary and navigation links. -->
+<head>
+    <!-- Page metadata and stylesheet link for page layout and theme -->
+    <title>NETWORK SECURITY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Site header includes branding, navigation, and a theme toggle button -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo" aria-label="Go to home page">
+            <div class="logo-mark"></div>
+        </a>
+        <div class="site-branding">
+            <h1>PAGE 6: NETWORK SECURITY</h1>
+            <p class="subtitle">Protect networks with the right security controls and threat awareness.</p>
+        </div>
+        <div class="page-image">
+            
+        </div>
+                <!-- Navigation menu for moving across topic pages -->
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="page1.html">INTRO & CONCEPTS</a>
+            <a href="page2.html">HARDWARE</a>
+            <a href="page3.html">TRANSMISSION</a>
+            <a href="page4.html">TOPOLOGIES</a>
+            <a href="page5.html">DATA & PROTOCOLS</a>
+            <a href="page6.html" class="active">SECURITY</a>
+            <a href="page7.html">TIMELINE</a>
+            <a href="about.html">ABOUT</a>
+        </nav>
+
+                <!-- Button toggles dark mode and stores preference in localStorage -->
+        <button id="dark-mode-toggle">Dark Mode</button>
+    </header>
+
+        <!-- JavaScript handles dark mode, sticky navigation, and page load behavior -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const header = document.querySelector('.site-header');
+            const body = document.body;
+            const headerHeight = header.offsetHeight;
+            
+            if (window.pageYOffset > headerHeight - 80) {
+                nav.classList.add('sticky-nav');
+                body.classList.add('nav-sticky');
+            } else {
+                nav.classList.remove('sticky-nav');
+                body.classList.remove('nav-sticky');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('dark-mode-toggle').textContent = 'Light Mode';
+            }
+        });
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const button = document.getElementById('dark-mode-toggle');
+            const isDark = document.body.classList.contains('dark-mode');
+            button.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+            localStorage.setItem('darkMode', isDark);
+        });
+    </script>
+        <!-- Icon or illustration representing the current page theme -->
+    <div class="page-icon">
+        <img src="Network-Security.jpg" alt="Security icon">
+    </div>
+    <h2>Threats to Network Security</h2>
+        <!-- Glossary grid presents term definitions and helpful explanations -->
+    <div class="glossary-grid">
+        <dl class="glossary-item">
+            <dt>Types of malware and viruses e.g. trojan</dt>
+            <dd>Malware: Malicious software designed to damage, disrupt, or gain unauthorised access to computer systems. Trojans: Malware disguised as legitimate software; once opened, it gives attackers access or causes harm.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Social Engineering</dt>
+            <dd>Manipulating people into revealing confidential information or granting access, often through deception or trust exploitation.</dd>
+        </dl>
+    </div>
+    
+    <h2>Strategies to prevent Cybercrime include:</h2>
+    <div class="glossary-grid">
+        <dl class="glossary-item">
+            <dt>Firewalls</dt>
+            <dd>A security barrier that filters incoming and outgoing traffic, blocking harmful data and preventing unauthorised access to the network.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>VPNs</dt>
+            <dd>A virtual private network, or VPN, is an encrypted connection over the internet from a device to a network. The encrypted connection helps ensure that sensitive data is safely transmitted. It prevents unauthorized people from eavesdropping on the traffic and allows the user to conduct work remotely.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>Encryption</dt>
+            <dd>Scrambling data so only authorised users with the correct key can read it.</dd>
+        </dl>
+        
+        <dl class="glossary-item">
+            <dt>2FA</dt>
+            <dd>Two- factor authentication requires two proofs of identity, such as a password plus a code or biometric.</dd>
+        </dl>
+    </div>
+            <!-- Footer section contains site credits, copyright, and additional links -->
+        <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Computer Networks & Social Media</h3>
+                <p>This site combines clear explanations of computer networking, communication protocols, security, and the social media timeline into one student-friendly learning resource.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="page1.html">Intro & Concepts</a>
+                    <a href="page2.html">Hardware</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <a href="page3.html">Transmission</a>
+                    <a href="page4.html">Topologies</a>
+                    <a href="page6.html">Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Timeline</h4>
+                    <a href="page5.html">Data & Protocols</a>
+                    <a href="page7.html">Social Media Timeline</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-note">&copy; 2026 Computer Networks & Social Media Educational Resource. All rights reserved.</p>
+            <p class="footer-note">Designed for easy classroom review and student learning.</p>
+        </div>
+    </footer>
+</body>
+</html>
